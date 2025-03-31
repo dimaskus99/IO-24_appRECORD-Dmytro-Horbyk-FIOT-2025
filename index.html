@@ -13,19 +13,59 @@
         .sidebar { float: left; width: 20%; }
         .sidebar a { cursor: pointer; display: block; padding: 5px; text-decoration: none; }
         .sidebar a:hover { background-color: #f0f0f0; }
-        .content { float: right; width: 75%; min-height: 300px; border: 1px solid black; padding: 10px; }
+        .content { float: right; width: 75%; height: 300px; border: 1px solid black; padding: 10px; overflow: auto; background-color: #fff;}
+        .student-photo { position: absolute; top: 10px; right: 10px; }
+        .student-photo img { width: 150px; height: auto; border-radius: 10px; }
     </style>
     <script>
         function loadContent(contentId){
             let content = {
-                "environment": "<h3>Опис предметного середовища</h3><p>Кулінарний сайт - це веб-застосунок, що дозволяє користувачам знаходити, публікувати та зберігати рецепти.</p>",
-                "goal": "<h3>Тема, мета, місце розташування</h3><p>Тема: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ. GitHub. РОБОТА З РЕПОЗИТОРІЯМИ. ОСНОВНІ ТЕГИ ТА АТРИБУТИ в HTML-ДОКУМЕНТІ.<br>Мета: придбати практичні навички роботи  з GitHub, репозиторіями, HTML-документом, таблицями, , зображеннями, посиланнями, списками, формами Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.<br>Місце розташування ГІТХАБ: <i>https://github.com/dimaskus99/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025.git</i>.<br>Місце розташування живої сторінки: <i>https://dimaskus99.github.io/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025/</i>.<br>Місце розташування ГІТХАБ СР: <i>https://github.com/dimaskus99/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025.git</i>.<br>Місце розташування живої сторінки СР: <i>https://dimaskus99.github.io/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025/</i>.<br>Місце розташування ГІТХАБ звіту: <i>https://github.com/dimaskus99/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025.git</i>.<br>Місце розташування живої сторінки звіту: <i>https://dimaskus99.github.io/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025/</i>.</p>",
-                "structure": "<h3>Структура документа</h3><p>Головна сторінка кулінарного сайту складається з таких елементів: шапка, навігація, секція категорії рецептів, форма зворотного зв'язку, підвал.</p>",
-                "tables": "<h3>HTML-код таблиць</h3><p>Приклад таблиці для відображення рецептів:</p><pre>&lt;table border='1'&gt;<br>&lt;tr&gt;&lt;th&gt;Назва&lt;/th&gt;&lt;th&gt;Час приготування&lt;/th&gt;&lt;/tr&gt;<br>&lt;tr&gt;&lt;td&gt;Борщ&lt;/td&gt;&lt;td&gt;1 година&lt;/td&gt;&lt;/tr&gt;<br>&lt;/table&gt;</pre>",
-                "images": "<h3>HTML-код зображень</h3><p>Приклад вставки зображення страви:</p><pre>&lt;img src='images/zavtrak-iz-lavasha-s-nachinkoi-na-skovorode_1613888378_16_max.jpg' alt='Сніданок з лаваша' width='300'&gt;</pre>",
-                "lists": "<h3>HTML-код списків</h3><p>Приклад списку категорій страв:</p><pre>&lt;ul&gt;<br>&lt;li&gt;Супи&lt;/li&gt;<br>&lt;li&gt;Напої&lt;/li&gt;<br>&lt;li&gt;Закуски&lt;/li&gt;<br>&lt;/ul&gt;</pre>",
-                "form": "<h3>HTML-код форм</h3><p>Приклад коду для форми:</p><pre>&lt;form&gt;<br>&lt;label for='name'&gt;Ім'я:&lt;/label&gt;<br>&lt;input type='text' id='name' name='name' required&gt;&lt;br&gt;<br>&lt;label for='comment'&gt;Коментар:&lt;/label&gt;<br>&lt;textarea id='comment' name='comment' required&gt;&lt;/textarea&gt;&lt;br&gt;<br>&lt;button type='submit'&gt;Надіслати&lt;/button&gt;<br>&lt;/form&gt;</pre>",
-                "conclusion": "<h3>Висновки</h3><p>Під час роботи ми створили  головну сторінку для майбутнього кулінарного сайту із таблицями, списками, зображеннями та формою.</p>"
+                "environment": `<h3>Опис предметного середовища</h3>
+                                <p>Кулінарний сайт – це веб-застосунок, який призначений для любителів та професіоналів у сфері приготування їжі. Він надає користувачам можливість переглядати, публікувати, коментувати та зберігати рецепти страв.</p>
+                                <h4>Основні функціональні можливості сайту:</h4>
+                                <p>1. Каталог рецептів</p>
+                                <p>2. Реєстрація та авторизація користувачів</p>
+                                <p>3. Додавання власних рецептів</p>
+                                <p>4. Інтерактивність та соціальні функції</p>
+                                <p>5. Корисні додаткові функції</p>`,
+                "goal": `<h3>Тема, мета, місце розташування</h3>
+                         <p>Тема: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ. GitHub. РОБОТА З РЕПОЗИТОРІЯМИ. ОСНОВНІ ТЕГИ ТА АТРИБУТИ в HTML-ДОКУМЕНТІ.
+                            <br>Мета: придбати практичні навички роботи  з GitHub, репозиторіями, HTML-документом, таблицями, , зображеннями, посиланнями, списками, формами Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.
+                            <br>Місце розташування ГІТХАБ: <i>https://github.com/dimaskus99/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025.git</i>.
+                            <br>Місце розташування живої сторінки: <i>https://dimaskus99.github.io/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025/</i>.
+                            <br>Місце розташування ГІТХАБ СР: <i>https://github.com/dimaskus99/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025.git</i>.
+                            <br>Місце розташування живої сторінки СР: <i>https://dimaskus99.github.io/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025/</i>.
+                            <br>Місце розташування ГІТХАБ звіту: <i>https://github.com/dimaskus99/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025.git</i>.
+                            <br>Місце розташування живої сторінки звіту: <i>https://dimaskus99.github.io/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025/</i>.</p>`,
+                "structure": `<h3>Структура документа</h3>
+                              <p>Кулінарний сайт має логічно організовану структуру, яка забезпечує зручну навігацію для користувачів та ефективний доступ до всіх функціональних можливостей.</p>
+                              <h4>Основні структурні елементи сторінки</h4>
+                              <p>1. Шапка сайту(Відображає назву сайту та його логотип; Включає пошуковий рядок для швидкого доступу до рецептів; Кнопки входу/реєстрації або профілю користувача.)</p>
+                              <p>2. Бічна панель(Навігаційне меню.)</p>
+                              <p>3. Головний контент(Відображення списку рецептів, статей або конкретного рецепта; Динамічне оновлення контенту при виборі певної категорії; Включає інтерактивні елементи.)</p>
+                              <p>4. Підвал сайту(Відображає контакти, соціальні мережі, авторські права; Може містити додаткові посилання.</p>`,
+                "tables": `<h3>HTML-код таблиць</h3>
+                           <p>Приклад коду таблиці для відображення рецептів:</p>
+                           <img src="images/SharedScreenshot.jpg" alt="Код 1" style="width:300px; border-radius:10px">
+                           <p>Відображення таблиці:</p>
+                           <img src="images/SharedScreenshot1.jpg" alt="Зображення 1" style="width:300px; border-radius:10px">`,
+                "images": `<h3>HTML-код зображень</h3>
+                           <p>Приклад коду вставки зображення страви:</p>
+                           <img src="images/SharedScreenshot2.jpg" alt="Код 2" style="width:600px; border-radius:10px">
+                           <p>Відображення зображення:</p>
+                           <img src="images/SharedScreenshot3.jpg" alt="Зображення 2" style="width:400px; border-radius:10px">`,
+                "lists": `<h3>HTML-код списків</h3>
+                          <p>Приклад коду списку категорій страв:</p>
+                          <img src="images/SharedScreenshot4.jpg" alt="Код 3" style="width:400px; border-radius:10px">
+                          <p>Відображення списку:</p>
+                          <img src="images/SharedScreenshot5.jpg" alt="Зображення 3" style="width:400px; border-radius:10px">`,
+                "form": `<h3>HTML-код форм</h3>
+                         <p>Приклад коду для форми:</p>
+                         <img src="images/SharedScreenshot6.jpg" alt="Код 4" style="width:400px; border-radius:10px">
+                         <p>Відображення форми:</p>
+                         <img src="images/SharedScreenshot7.jpg" alt="Зображення 4" style="width:300px; border-radius:10px">`,
+                "conclusion": `<h3>Висновки</h3>
+                               <p>Під час роботи ми створили  головну сторінку для майбутнього кулінарного сайту із таблицями, списками, зображеннями та формою. Було також створено сайт для написання звітів за макетом наданим в методичці.</p>`
             };
             document.getElementById("content").innerHTML = content[contentId] || "<p>Розділ не знайдено.</p>";
         }
@@ -37,6 +77,9 @@
             <h1>Звіти з лабораторних робіт</h1>
             <h2>З дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND ТА BACKEND РОЗРОБОК"</h2>
             <h3>Студент групи ІО-24 Горбик Дмитро Сергійович</h3>
+            <div class="student-photo">
+                <img src="images/WIN_20250331_10_47_53_Pro.jpg" alt="Фото студента">
+            </div>
         </div>
         
         <div class="menu">
