@@ -3,69 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Звіт по курсу.</title>
     <style>
         body { font-family: Arial, sans-serif; }
-        .container { width: 80%; margin: auto; }
+        .container { width: 100%; margin: auto; }
         .header { text-align: center; font-weight: bold; }
-        .menu { display: flex; justify-content: center; margin: 10px 0; }
-        .menu button { margin: 5px; padding: 10px; }
         .sidebar { float: left; width: 20%; }
         .sidebar a { cursor: pointer; display: block; padding: 5px; text-decoration: none; }
         .sidebar a:hover { background-color: #f0f0f0; }
-        .content { float: right; width: 75%; height: 300px; border: 1px solid black; padding: 10px; overflow: auto; background-color: #fff;}
-        .student-photo { position: absolute; top: 10px; right: 10px; }
+        .content { float: right; width: 75%; height: 500px; border: 1px solid black; padding: 10px; overflow: auto; background-color: #fff;}
+        .student-photo { position: absolute; top: 5px; right: 10px; }
         .student-photo img { width: 150px; height: auto; border-radius: 10px; }
     </style>
     <script>
         function loadContent(contentId){
             let content = {
-                "environment": `<h3>Опис предметного середовища</h3>
-                                <p>Кулінарний сайт – це веб-застосунок, який призначений для любителів та професіоналів у сфері приготування їжі. Він надає користувачам можливість переглядати, публікувати, коментувати та зберігати рецепти страв.</p>
-                                <h4>Основні функціональні можливості сайту:</h4>
-                                <p>1. Каталог рецептів</p>
-                                <p>2. Реєстрація та авторизація користувачів</p>
-                                <p>3. Додавання власних рецептів</p>
-                                <p>4. Інтерактивність та соціальні функції</p>
-                                <p>5. Корисні додаткові функції</p>`,
-                "goal": `<h3>Тема, мета, місце розташування</h3>
-                         <p>Тема: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ. GitHub. РОБОТА З РЕПОЗИТОРІЯМИ. ОСНОВНІ ТЕГИ ТА АТРИБУТИ в HTML-ДОКУМЕНТІ.
-                            <br>Мета: придбати практичні навички роботи  з GitHub, репозиторіями, HTML-документом, таблицями, , зображеннями, посиланнями, списками, формами Створити шаблон звітного HTML-документом для відображення результатів роботи всіх лабораторних робіт.
-                            <br>Місце розташування ГІТХАБ: <i>https://github.com/dimaskus99/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025.git</i>.
-                            <br>Місце розташування живої сторінки: <i>https://dimaskus99.github.io/IO-24_appWEB-Dmytro-Horbyk-FIOT-2025/</i>.
-                            <br>Місце розташування ГІТХАБ СР: <i>https://github.com/dimaskus99/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025.git</i>.
-                            <br>Місце розташування живої сторінки СР: <i>https://dimaskus99.github.io/IO-24_INDEPENDENT-Dmytro-Horbyk-FIOT-2025/</i>.
-                            <br>Місце розташування ГІТХАБ звіту: <i>https://github.com/dimaskus99/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025.git</i>.
-                            <br>Місце розташування живої сторінки звіту: <i>https://dimaskus99.github.io/IO-24_appRECORD-Dmytro-Horbyk-FIOT-2025/</i>.</p>`,
-                "structure": `<h3>Структура документа</h3>
-                              <p>Кулінарний сайт має логічно організовану структуру, яка забезпечує зручну навігацію для користувачів та ефективний доступ до всіх функціональних можливостей.</p>
-                              <h4>Основні структурні елементи сторінки</h4>
-                              <p>1. Шапка сайту(Відображає назву сайту та його логотип; Включає пошуковий рядок для швидкого доступу до рецептів; Кнопки входу/реєстрації або профілю користувача.)</p>
-                              <p>2. Бічна панель(Навігаційне меню.)</p>
-                              <p>3. Головний контент(Відображення списку рецептів, статей або конкретного рецепта; Динамічне оновлення контенту при виборі певної категорії; Включає інтерактивні елементи.)</p>
-                              <p>4. Підвал сайту(Відображає контакти, соціальні мережі, авторські права; Може містити додаткові посилання.</p>`,
-                "tables": `<h3>HTML-код таблиць</h3>
-                           <p>Приклад коду таблиці для відображення рецептів:</p>
-                           <img src="images/SharedScreenshot.jpg" alt="Код 1" style="width:300px; border-radius:10px">
-                           <p>Відображення таблиці:</p>
-                           <img src="images/SharedScreenshot1.jpg" alt="Зображення 1" style="width:300px; border-radius:10px">`,
-                "images": `<h3>HTML-код зображень</h3>
-                           <p>Приклад коду вставки зображення страви:</p>
-                           <img src="images/SharedScreenshot2.jpg" alt="Код 2" style="width:600px; border-radius:10px">
-                           <p>Відображення зображення:</p>
-                           <img src="images/SharedScreenshot3.jpg" alt="Зображення 2" style="width:400px; border-radius:10px">`,
-                "lists": `<h3>HTML-код списків</h3>
-                          <p>Приклад коду списку категорій страв:</p>
-                          <img src="images/SharedScreenshot4.jpg" alt="Код 3" style="width:400px; border-radius:10px">
-                          <p>Відображення списку:</p>
-                          <img src="images/SharedScreenshot5.jpg" alt="Зображення 3" style="width:400px; border-radius:10px">`,
-                "form": `<h3>HTML-код форм</h3>
-                         <p>Приклад коду для форми:</p>
-                         <img src="images/SharedScreenshot6.jpg" alt="Код 4" style="width:400px; border-radius:10px">
-                         <p>Відображення форми:</p>
-                         <img src="images/SharedScreenshot7.jpg" alt="Зображення 4" style="width:300px; border-radius:10px">`,
+                "udemy": `<h3>The Complete Full-Stack Web Development Bootcamp</h3>
+                          <a href="https://www.udemy.com/course/the-complete-web-development-bootcamp/?srsltid=AfmBOorTuVRrnQLQSCbT-kZ2khJeWXgTDmqM0X1fm6xUvjwvylH-BslP&couponCode=CP130525">Посилання на курс.</a> `,
+                "github": `<h3>Посилання на репозиторії з практичними завданнями та індивідуальними проектами.</h3>
+                           <p><br><a href="https://github.com/dimaskus99/Practice.git">Гітхаб усіх практичних завдань.</a>
+                           <br><a href="https://github.com/dimaskus99/IO-24_RESUME-Dmytro-Horbyk-FIOT-2025.git">Гітхаб першого індивідуального проекту(резюме)</a>
+                           <br><a href="https://github.com/dimaskus99/BlogApp.git">Гітхаб другого індивідуального проекту(Blog Web Application)</a>
+                           <br><a href="https://github.com/dimaskus99/JokeAPI.git">Гітхаб третього індивідуального проекту(JokeAPI)</a>
+                           <br><a href="https://github.com/dimaskus99/books.git">Гітхаб четвертого індивідуального проекту(База даних книг)</a>`,
+                "sertificate": `<h3>Сертифікат</h3>
+                                <img src="images/UC-52b4b691-b31c-4208-9628-15789977bfee.jpg" style="max-width: 100%; height: auto; border-radius: 10px;">`,
+                "content": `<h3>Зміст курсу.</h3>
+                            <ol>
+                                <li>Front-End Web Development</li>
+                                <li>HTML 5</li>
+                                <li>CSS 3</li>
+                                <li>Flexbox</li>
+                                <li>Grid</li>
+                                <li>Bootstrap 5</li>
+                                <li>Javascript ES6</li>
+                                <li>DOM Manipulation</li>
+                                <li>jQuery</li>
+                                <li>Bash Command Line</li>
+                                <li>Git, GitHub and Version Control</li>
+                                <li>Backend Web Development</li>
+                                <li>Node.js</li>
+                                <li>NPM</li>
+                                <li>Express.js</li>
+                                <li>EJS</li>
+                                <li>REST</li>
+                                <li>APIs</li>
+                                <li>Databases</li>
+                                <li>SQL</li>
+                                <li>PostgreSQL</li>
+                                <li>Authentication</li>
+                                <li>React.js</li>
+                                <li>React Hooks</li>
+                                <li>Web Design</li>
+                                <li>Deployment with GitHub Pages</li>
+                                <li>Web3 Development on the Internet Computer</li>
+                                <li>Blockchain technology</li>
+                                <li>Token contract development</li>
+                                <li>NFT minting, buying and selling logic</li>
+                            </ol>`,
+                "tests": `<h3>Тести</h3>
+                           <p>Тест 1, CSS Quiz:</p>
+                           <img src="images/SharedScreenshot.jpg" style="width:600px; border-radius:10px">
+                           <p>Тест 2, Javascript Variable Naming Quiz:</p>
+                           <img src="images/SharedScreenshot1.jpg" style="width:600px; border-radius:10px">
+                           <p>Тест 3, Javascript Numbers Quiz:</p>
+                           <img src="images/SharedScreenshot2.jpg" style="width:600px; border-radius:10px">
+                           <p>Тест 4, Javascript Functions Quiz:</p>
+                           <img src="images/SharedScreenshot3.jpg" style="width:600px; border-radius:10px">
+                           <p>Тест 5, Motoko Language Quiz:</p>
+                           <img src="images/SharedScreenshot4.jpg" style="width:600px; border-radius:10px">`,
                 "conclusion": `<h3>Висновки</h3>
-                               <p>Під час роботи ми створили  головну сторінку для майбутнього кулінарного сайту із таблицями, списками, зображеннями та формою. Було також створено сайт для написання звітів за макетом наданим в методичці.</p>`
+                               <p>Під час виконання курсу The Complete Full-Stack Web Development Bootcamp було вивчено технології розробки веб-застосунків, такі як Javascript, React, Node, Bootstrap, ESJ та інше. Було також освоєно розробку баз даних та власного API. Також було виконано безліч практичних завдань по темам і розроблено пару власних веб-застосунків. Курс був досить цікавим.</p>`
             };
             document.getElementById("content").innerHTML = content[contentId] || "<p>Розділ не знайдено.</p>";
         }
@@ -74,7 +82,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Звіти з лабораторних робіт</h1>
+            <h1>Звіти з курсу The Complete Full-Stack Web Development Bootcamp</h1>
             <h2>З дисципліни "WEB-ОРІЄНТОВАНІ ТЕХНОЛОГІЇ. ОСНОВИ FRONTEND ТА BACKEND РОЗРОБОК"</h2>
             <h3>Студент групи ІО-24 Горбик Дмитро Сергійович</h3>
             <div class="student-photo">
@@ -82,27 +90,13 @@
             </div>
         </div>
         
-        <div class="menu">
-            <button>Лабораторна робота №1</button>
-            <button type="button" onclick="location.href='index2.html'">Лабораторна робота №2</button>
-            <button>Лабораторна робота №3</button>
-            <button>Лабораторна робота №4</button>
-            <button>Лабораторна робота №5</button>
-            <button>Лабораторна робота №6</button>
-            <button>Лабораторна робота №7</button>
-            <button>Лабораторна робота №8</button>
-            <button>Лабораторна робота №9</button>
-        </div>
-        
         <div class="sidebar">
             <ul>
-                <li><a onclick="loadContent('environment')">Опис предметного середовища</a></li>
-                <li><a onclick="loadContent('goal')">Тема, мета, місце розташування</a></li>
-                <li><a onclick="loadContent('structure')">Структура документа</a></li>
-                <li><a onclick="loadContent('tables')">HTML-код таблиць</a></li>
-                <li><a onclick="loadContent('form')">HTML-код форм</a></li>
-                <li><a onclick="loadContent('images')">HTML-код зображень</a></li>
-                <li><a onclick="loadContent('lists')">HTML-код списків</a></li>
+                <li><a onclick="loadContent('udemy')">Назва курсу і посилання на курс</a></li>
+                <li><a onclick="loadContent('github')">Посилання на репозиторій</a></li>
+                <li><a onclick="loadContent('sertificate')">Сертифікат</a></li>
+                <li><a onclick="loadContent('content')">Зміст курсу</a></li>
+                <li><a onclick="loadContent('tests')">Тести</a></li>
                 <li><a onclick="loadContent('conclusion')">Висновки</a></li>
             </ul>
         </div>
